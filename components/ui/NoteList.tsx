@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import Heading from './Heading';
 import SubHeading from './SubHeading';
 
 interface Props {}
