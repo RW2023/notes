@@ -11,7 +11,10 @@ const page: FC<Props> = (props): JSX.Element => {
       <div>
         <Heading title="Notes" />
       </div>
-      <div className="flex flex-row border border-1 rounded-md">
+      <div
+        className="flex flex-row border border-1 rounded-md"
+        data-theme="cmyk"
+      >
         <div className="flex-1 p-3">
           <NoteInput />
         </div>
