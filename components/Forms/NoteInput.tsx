@@ -52,7 +52,7 @@ const NoteInput: FC<Props> = () => {
               value={text}
               onChange={handleTextChange}
             ></textarea>
-            <div className="flex-1 flex-col justify-center items-center">
+            <div className="flex-1 flex-col justify-center items-center mt-4">
               <button
                 className="bg-green-700 hover:bg-success text-white font-bold py-2 px-4 rounded"
                 type="submit"
