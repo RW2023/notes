@@ -24,13 +24,13 @@ const NoteInput: FC<Props> = () => {
         <form className="w-full max-w-xs">
           <div className="mb-4">
             <label
-              className="block text-headline text-sm font-bold mb-2"
+              className="block text-sm font-bold mb-2"
               htmlFor="note-title"
             >
-              Note Title:
+              <SubHeading title="Note Title:" />
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-headline leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-1 focus:shadow-outline"
               id="note-title"
               type="text"
               placeholder="Your note title"
@@ -40,13 +40,13 @@ const NoteInput: FC<Props> = () => {
           </div>
           <div className="mb-6">
             <label
-              className="block text-headline text-sm font-bold mb-2"
+              className="block text-sm font-bold mb-2"
               htmlFor="note-text"
             >
-              Note Text:
+              <SubHeading title="Note Text:" />
             </label>
             <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-headline leading-tight focus:outline-none focus:shadow-outline h-48 "
+              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-1 focus:shadow-outline h-48 "
               id="note-text"
               placeholder="Your note text"
               value={text}
@@ -54,7 +54,7 @@ const NoteInput: FC<Props> = () => {
             ></textarea>
             <div className="flex-1 flex-col justify-center items-center mt-4">
               <button
-                className="bg-green-700 hover:bg-success text-white font-bold py-2 px-4 rounded"
+                className="bg-green-700 hover:bg-success font-bold py-2 px-4 rounded"
                 type="submit"
               >
                 Add Note
