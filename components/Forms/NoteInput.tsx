@@ -1,69 +1,55 @@
 'use client';
-import { FC, useState } from 'react';
-import SubHeading from '../ui/SubHeading';
 
-interface Props {
-    // Remove the props property
-}
+import React, { useState } from 'react';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
-const NoteInput: FC<Props> = () => {
-    const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
+const NoteInput = () => {
+  const [title, setTitle] = useState('');
+  const [noteText, setNoteText] = useState('');
 
-    const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setTitle(event.target.value);
-    };
+  const supabase = createClientComponentClient();
 
-    const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setText(event.target.value);
-    };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    return (
-      <div className="flex flex-col justify-center items-center">
-        <SubHeading title="Add a Note" />
-        <form className="w-full max-w-xs">
-          <div className="mb-4">
-            <label
-              className="block text-sm font-bold mb-2"
-              htmlFor="note-title"
-            >
-              <SubHeading title="Note Title:" />
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-1 focus:shadow-outline"
-              id="note-title"
-              type="text"
-              placeholder="Your note title"
-              value={title}
-              onChange={handleTitleChange}
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              className="block text-sm font-bold mb-2"
-              htmlFor="note-text"
-            >
-              <SubHeading title="Note Text:" />
-            </label>
-            <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-1 focus:shadow-outline h-48 "
-              id="note-text"
-              placeholder="Your note text"
-              value={text}
-              onChange={handleTextChange}
-            ></textarea>
-            <div className="flex-1 flex-col justify-center items-center mt-4">
-              <button
-                className="bg-green-700 hover:bg-success font-bold py-2 px-4 rounded"
-                type="submit"
-              >
-                Add Note
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    );
+    const { data, error } = await supabase
+      .from('notes')
+      .insert([{ title, note_text: noteText }]);
+
+    if (error) console.log('error', error);
+    else {
+      setTitle('');
+      setNoteText('');
+      console.log('Note added:', data);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="form-control w-full max-w-xs">
+      <label className="label">
+        <span className="label-text">Title</span>
+      </label>
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Title"
+        className="input input-bordered w-full max-w-xs"
+      />
+      <label className="label">
+        <span className="label-text">Note</span>
+      </label>
+      <textarea
+        value={noteText}
+        onChange={(e) => setNoteText(e.target.value)}
+        placeholder="Write your note here"
+        className="textarea textarea-bordered h-24"
+      />
+      <button type="submit" className="btn btn-primary mt-4">
+        Submit
+      </button>
+    </form>
+  );
 };
 
 export default NoteInput;
