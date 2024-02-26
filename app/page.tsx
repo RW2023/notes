@@ -1,6 +1,7 @@
 import { createClient } from '../utils/supabase/server';
 import AuthButton from '../components/AuthButton';
 import Landing from '@/components/ui/Landing';
+import NoteInput from '@/components/Forms/NoteInput';
 
 export default async function Index() {
   const canInitSupabaseClient = () => {
