@@ -37,10 +37,14 @@ const NoteList = () => {
   return (
     <div>
       {notes.map((note) => (
-        <div key={note.note_id}>
-          <h3>{note.title}</h3>
-          <p>{note.note_text}</p>
-          <small>{note.created_at}</small>
+        <div key={note.note_id} className="card bg-base-100 shadow-xl">
+          <div className="card-body">
+            <h3 className="card-title">{note.title}</h3>
+            <p>{note.note_text}</p>
+            <div className="card-actions justify-end">
+              <small>{new Date(note.created_at).toLocaleString()}</small>
+            </div>
+          </div>
         </div>
       ))}
     </div>
