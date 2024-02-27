@@ -10,8 +10,9 @@ export default function Layout({
       <html lang="en" data-theme="business">
         <body>
           <Navbar />
-          <AuthButton />
+
           <main className="min-h-screen flex flex-col items-center">
+            <AuthButton />
             {children}
           </main>
         </body>
