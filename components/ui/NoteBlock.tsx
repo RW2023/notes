@@ -67,18 +67,26 @@ const NoteBlock: FC = () => {
 
   return (
     <div>
-      <div className='bg-base-200 rounded-md'>
-        <SubHeading title='Notes to self'/>
+      <div className="bg-base-200 rounded-md">
+        <SubHeading title="Notes to self" />
       </div>
-      <div className='w-full'>
+      <div className="bg-base-300">
         {notes.map((note) => (
-          <div key={note.note_id} className='card-compact shadow-lg border border-1 m-2 p-2'>
-            <div className='card-body bg-base-200 rounded'>
-              <p className='text-italic'>Note #:{' '}{note.note_id}</p>
+          <div
+            key={note.note_id}
+            className="card-compact shadow-lg border border-1 m-2 p-2"
+          >
+            <div className="card-body bg-base-200 rounded">
+              <p className="text-italic">Note #: {note.note_id}</p>
               <SubHeading title={note.title} />
-              <p className='text-lg'>{note.note_text}</p>
+              <p className="text-lg">{note.note_text}</p>
             </div>
-            <small>created: {' '}{note.created_at}</small>
+            <div>
+              <small>created:</small>
+            </div>
+            <div>
+              <small> {note.created_at}</small>
+            </div>
           </div>
         ))}
       </div>
