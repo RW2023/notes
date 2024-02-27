@@ -5,8 +5,19 @@ import "./globals.css";
 
 
 export const metadata = {
-  title: "Note To Self",
-  description: "A simple note-taking app built with Supabase and Next.js",
+  title: 'Note To Self',
+  description: 'A simple note-taking app built with Supabase and Next.js',
+  metadataBase: new URL('https://acme.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+      'de-DE': '/de-DE',
+    },
+  },
+  openGraph: {
+    images: '/og-image.png',
+  },
 };
 
 export default function RootLayout({
