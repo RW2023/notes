@@ -72,7 +72,7 @@ const Navbar = () => {
                 alt="notes logo"
                 width="60"
                 height="60"
-                className="rounded-full border-2 border-button"
+                className="rounded-full border-2 border-black"
               />
               {/* SubHeading */}
               <SubHeading title="Note to Self" iconClass="fas fa-person" />
