@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import SubHeading from './SubHeading';
-// import DarkModeToggle from './DarkModeToggle';
+import DarkModeToggle from './DarkModeToggle';
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 
@@ -68,14 +68,14 @@ const Navbar = () => {
               {' '}
               {/* Logo Image */}
               <Image
-                src={'/img/logo.png'}
-                alt="Run Book Logo"
+                src={'/logo.webp'}
+                alt="notes logo"
                 width="60"
                 height="60"
                 className="rounded-full border-2 border-button"
               />
               {/* SubHeading */}
-              <SubHeading title="Run Book 2024" iconClass="fas fa-person" />
+              <SubHeading title="Note to Self" iconClass="fas fa-person" />
             </div>
           </span>
         </Link>
@@ -160,7 +160,7 @@ const Navbar = () => {
               <i className="fas fa-envelope mr-2"></i>Contact
             </span>
           </Link>
-          {/* <DarkModeToggle /> */}
+          <DarkModeToggle />
         </div>
       </div>
     </motion.nav>
