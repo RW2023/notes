@@ -10,6 +10,7 @@
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "^2.39.7",
     "autoprefixer": "10.4.17",
+    "framer-motion": "^11.0.6",
     "geist": "^1.2.1",
     "next": "latest",
     "postcss": "8.4.33",
