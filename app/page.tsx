@@ -2,6 +2,7 @@ import { createClient } from '../utils/supabase/server';
 import AuthButton from '../components/AuthButton';
 import Landing from '@/components/ui/Landing';
 import NoteInput from '@/components/Forms/NoteInput';
+import DarkModeToggle from '@/components/ui/DarkModeToggle';
 
 export default async function Index() {
   const canInitSupabaseClient = () => {
@@ -22,6 +23,7 @@ export default async function Index() {
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
           {isSupabaseConnected && <AuthButton />}
+          <DarkModeToggle />
         </div>
       </nav>
 
