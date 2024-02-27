@@ -1,37 +1,31 @@
-import { createClient } from '../utils/supabase/server';
-import AuthButton from '../components/AuthButton';
-import Landing from '@/components/ui/Landing';
-import NoteInput from '@/components/Forms/NoteInput';
-import DarkModeToggle from '@/components/ui/DarkModeToggle';
+import { FC } from 'react';
+import Link from 'next/link';
 
-export default async function Index() {
-  const canInitSupabaseClient = () => {
-    // This function is just for the interactive tutorial.
-    // Feel free to remove it once you have Supabase connected.
-    try {
-      createClient();
-      return true;
-    } catch (e) {
-      return false;
-    }
-  };
+interface Props {}
 
-  const isSupabaseConnected = canInitSupabaseClient();
-
+const page: FC<Props> = (props): JSX.Element => {
   return (
-    <div className="flex-1 w-full flex flex-col gap-20 items-center">
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-          {isSupabaseConnected && <AuthButton />}
-          <DarkModeToggle />
+    <div
+      className="hero min-h-screen"
+      style={{
+        backgroundImage:
+          'url(/hero.webp)',
+      }}
+    >
+      <div className="hero-overlay bg-opacity-60"></div>
+      <div className="hero-content text-center text-neutral-content">
+        <div className="max-w-md">
+          <h1 className="mb-5 text-5xl font-bold">Note to Self</h1>
+          <p className="mb-5">
+            Welcome to Note to Self. This is a simple note taking app.
+          </p>
+          <Link
+          href="/login"
+          ><button type='submit' className="btn btn-primary">Login</button></Link>
         </div>
-      </nav>
-
-      {/* <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3"> */}
-
-      <main className="flex-1 flex flex-col gap-6 justify-between">
-<Landing />
-      </main>
+      </div>
     </div>
   );
-}
+};
+
+export default page;
