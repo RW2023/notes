@@ -128,12 +128,12 @@ const Navbar = () => {
         } w-full lg:flex lg:items-center lg:w-auto lg:justify-end`}
       >
         <div className="text-sm lg:flex-grow">
-          <Link href="/devdash">
+          <Link href="/landing">
             <span
               onClick={closeNavbar}
               className="block mt-4 lg:inline-block lg:mt-0 text-strokeLight text-xl  hover:underline mr-4 cursor-pointer"
             >
-              <i className="fas fa-cogs mr-2"></i>Dashboard{' '}
+              <i className="fas fa-cogs mr-2"></i>Notes{' '}
             </span>
           </Link>
           <Link href="/about">
@@ -141,17 +141,17 @@ const Navbar = () => {
               onClick={closeNavbar}
               className="block mt-4 lg:inline-block lg:mt-0 text-strokeLight text-xl  hover:underline mr-4 cursor-pointer"
             >
-              <i className="fas fa-info mr-2"></i>About Run Book
+              <i className="fas fa-info mr-2"></i>About  App
             </span>
           </Link>
-          <Link href="/feedback">
+          {/* <Link href="/feedback">
             <span
               onClick={closeNavbar}
               className="block mt-4 lg:inline-block lg:mt-0 text-strokeLight text-xl hover:underline mr-4 cursor-pointer"
             >
               <i className="fas fa-comments mr-2"></i>Feedback
             </span>
-          </Link>
+          </Link> */}
           <Link href="/contact">
             <span
               onClick={closeNavbar}
