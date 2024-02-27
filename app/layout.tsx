@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="black">
+    <html lang="en" data-theme="dark">
       <body>
         <main className="min-h-screen flex flex-col items-center">
           {children}
