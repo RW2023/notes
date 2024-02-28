@@ -68,7 +68,7 @@ const UpdateNoteForm: FC<Props> = (): JSX.Element => {
 
   return (
     <>
-      <div className="border-border border-1 rounded p-3 bg-base-200 m-3">
+      <div className="border-border border-1 rounded p-3 bg-base-200 m-3 flex flex-col">
         <SubHeading title={isUpdateMode ? 'Update Note' : 'Delete Note'} />
         <button onClick={toggleMode} className="btn btn-secondary mt-3">
           Switch to {isUpdateMode ? 'Delete' : 'Update'} Mode
