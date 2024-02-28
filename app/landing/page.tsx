@@ -1,4 +1,5 @@
-import Landing from '@/components/ui/Landing';
+import Layout from '@/components/layout';
+import NoteGridDisplay from '@/components/ui/NotesGridDisplay';
 import { FC } from 'react';
 
 interface Props {}
@@ -6,7 +7,9 @@ interface Props {}
 const page: FC<Props> = (props): JSX.Element => {
   return (
     
-    <Landing />
+    <Layout>
+      <NoteGridDisplay />
+    </Layout>
   );
 };
 
