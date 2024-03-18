@@ -4,9 +4,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import SubHeading from './SubHeading';
-import DarkModeToggle from './DarkModeToggle';
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
+import DarkToggle from './DarkToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -141,7 +141,7 @@ const Navbar = () => {
               onClick={closeNavbar}
               className="block mt-4 lg:inline-block lg:mt-0 text-strokeLight text-xl  hover:underline mr-4 cursor-pointer"
             >
-              <i className="fas fa-info mr-2"></i>About  App
+              <i className="fas fa-info mr-2"></i>About App
             </span>
           </Link>
           {/* <Link href="/feedback">
@@ -160,8 +160,8 @@ const Navbar = () => {
               <i className="fas fa-envelope mr-2"></i>Contact
             </span>
           </Link>
-          <DarkModeToggle />
         </div>
+        <DarkToggle />
       </div>
     </motion.nav>
   );
