@@ -17,6 +17,8 @@ async function fetchNotes(): Promise<Note[]> {
   // Utilizing Next.js's enhanced fetch API with caching and revalidating options
   const response = await fetch('http://localhost:3000/api/notes', {
     // Revalidation options
+      // Revalidation options
+    cache: 'force-cache', // Force the result to be from the HTTP cache
     next: {
       revalidate: 3600, // Revalidate data every hour
       tags: ['notesCollection'], // Tag this request for possible on-demand revalidation
