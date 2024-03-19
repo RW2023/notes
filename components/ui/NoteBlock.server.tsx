@@ -15,7 +15,7 @@ type Note = {
 // Async function to fetch notes from an API
 async function fetchNotes(): Promise<Note[]> {
   // Utilizing Next.js's enhanced fetch API with caching and revalidating options
-  const response = await fetch('http://localhost:3000/api/notes', {
+  const response = await fetch('/api/notes', {
     // Revalidation options
       // Revalidation options
     cache: 'force-cache', // Force the result to be from the HTTP cache
