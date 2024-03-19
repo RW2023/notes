@@ -2,7 +2,7 @@ import Link from "next/link";
 import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import DarkModeToggle from "@/components/ui/DarkModeToggle";
+import DarkToggle from "@/components/ui/DarkToggle";
 
 export default function Login({
   searchParams,
@@ -54,7 +54,7 @@ export default function Login({
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
       <div className="m-2 flex flex-col justify-center">
-        <DarkModeToggle />
+        <DarkToggle />
       </div>
       <Link
         href="/"
