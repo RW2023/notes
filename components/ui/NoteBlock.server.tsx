@@ -15,7 +15,7 @@ type Note = {
 // Async function to fetch notes from an API
 async function fetchNotes(): Promise<Note[]> {
   // Utilizing Next.js's enhanced fetch API with caching and revalidating options
-  const response = await fetch('https://ryannotes.vercel.app/api/notes', {
+  const response = await fetch('http://localhost:3000/api/notes', {
     // Default cache strategy can be 'force-cache' or customized as needed
     cache: 'force-cache', // Utilize the server-side Data Cache
     // Revalidation options
