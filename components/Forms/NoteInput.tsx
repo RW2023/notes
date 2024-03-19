@@ -25,30 +25,32 @@ const NoteInput = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-control w-full max-w-xs">
-      <label className="label">
-        <span className="label-text">Title</span>
-      </label>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Title"
-        className="input input-bordered w-full max-w-xs rounded-md"
-      />
-      <label className="label">
-        <span className="label-text">Note</span>
-      </label>
-      <textarea
-        value={noteText}
-        onChange={(e) => setNoteText(e.target.value)}
-        placeholder="Write your note here"
-        className="textarea textarea-bordered rounded-md w-full max-w-xs"
-      />
-      <button type="submit" className="btn btn-primary mt-4">
-        Submit
-      </button>
-    </form>
+    <div className='flex flex-col justify-center items-center'>
+      <form onSubmit={handleSubmit} className="form-control w-full max-w-xs">
+        <label className="label">
+          <span className="label-text">Title</span>
+        </label>
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Title"
+          className="input input-bordered w-full max-w-xs rounded-md"
+        />
+        <label className="label">
+          <span className="label-text">Note</span>
+        </label>
+        <textarea
+          value={noteText}
+          onChange={(e) => setNoteText(e.target.value)}
+          placeholder="Write your note here"
+          className="textarea textarea-bordered rounded-md w-full max-w-xs"
+        />
+        <button type="submit" className="btn btn-primary mt-4">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 
