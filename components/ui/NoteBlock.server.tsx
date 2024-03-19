@@ -59,11 +59,14 @@ export default async function NoteBlock() {
             >
               <div className="card-body bg-base-200 rounded">
                 <p className="text-italic">Note #: {note.note_id}</p>
-                <p className="title">{note.title}</p>
+                <SubHeading title={note.title} />
                 <p className="text-lg">{note.note_text}</p>
               </div>
               <div>
-                <small>Created: {note.created_at}</small>
+                <small>created:</small>
+              </div>
+              <div>
+                <small> {note.created_at}</small>
               </div>
             </div>
           ))}
