@@ -27,7 +27,7 @@ const NoteGridDisplay: FC<Props> = (props): JSX.Element => {
           {/* "Notes" section */}
           <div className="mb-4 flex flex-col">
             <div className="p-4 bg-black rounded-md w-full mb-4">
-              <h2 className="text-3xl text-gray-300 text-center">Notes</h2>
+              <h2 className="text-3xl text-headline text-center">Notes</h2>
             </div>
             <div className="flex-grow m-2 overflow-auto">
               <NoteList />
