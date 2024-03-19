@@ -12,18 +12,21 @@ type Note = {
   created_at: string;
 };
 
+const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+
 // Async function to fetch notes from an API
 async function fetchNotes(): Promise<Note[]> {
   // Utilizing Next.js's enhanced fetch API with caching and revalidating options
-  const response = await fetch('/api/notes', {
-    // Revalidation options
-      // Revalidation options
-    cache: 'force-cache', // Force the result to be from the HTTP cache
-    next: {
-      revalidate: 3600, // Revalidate data every hour
-      tags: ['notesCollection'], // Tag this request for possible on-demand revalidation
-    },
-  });
+ const response = await fetch(`${apiUrl}/api/notes`, {
+   // Revalidation options
+   // Revalidation options
+   cache: 'force-cache', // Force the result to be from the HTTP cache
+   next: {
+     revalidate: 3600, // Revalidate data every hour
+     tags: ['notesCollection'], // Tag this request for possible on-demand revalidation
+   },
+ });
 
   if (!response.ok) {
     throw new Error('Failed to fetch notes');
