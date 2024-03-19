@@ -1,6 +1,4 @@
-import NoteInput from '@/components/Forms/NoteInput';
-import Heading from '@/components/ui/Heading';
-import NoteList from '@/components/ui/NoteList';
+//src/pages/notes/index.tsx
 import Layout from '@/components/layout';
 import { FC } from 'react';
 import NoteGridDisplay from '@/components/ui/NotesGridDisplay';
