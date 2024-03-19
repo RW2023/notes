@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import NoteBlock from './NoteBlock';
+import NoteBlock from './NoteBlock.server';
 
 interface Props {}
 
