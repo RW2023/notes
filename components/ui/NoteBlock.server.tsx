@@ -16,8 +16,6 @@ type Note = {
 async function fetchNotes(): Promise<Note[]> {
   // Utilizing Next.js's enhanced fetch API with caching and revalidating options
   const response = await fetch('http://localhost:3000/api/notes', {
-    // Default cache strategy can be 'force-cache' or customized as needed
-    cache: 'force-cache', // Utilize the server-side Data Cache
     // Revalidation options
     next: {
       revalidate: 3600, // Revalidate data every hour
@@ -46,7 +44,7 @@ export default async function NoteBlock() {
   // Render the notes
   return (
     <div>
-      <div className="bg-base-200 rounded-md">
+      <div className="bg-base-200 rounded-md text-base-content">
         <SubHeading title="Notes to self" />
       </div>
       <div className="bg-base-300">
